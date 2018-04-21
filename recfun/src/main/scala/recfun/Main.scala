@@ -24,7 +24,7 @@ object Main {
    * Exercise 2
    */
   def balance(chars: List[Char]): Boolean = {
-    val INITIAL_OPEN_COUNT = 0
+    val InitialOpenCount = 0
     val parentheses = chars filter (c => c == '(' || c == ')')
 
     def calculateOpens(numberOfOpen: Int, char: Char): Int = char match {
@@ -39,7 +39,7 @@ object Main {
       else iterate(parentheses.tail, calculateOpens(numberOfOpen, parentheses.head))
     }
 
-    iterate(parentheses, INITIAL_OPEN_COUNT)
+    iterate(parentheses, InitialOpenCount)
   }
   
   /**
