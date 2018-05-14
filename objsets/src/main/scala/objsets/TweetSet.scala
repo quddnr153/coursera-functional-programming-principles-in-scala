@@ -158,7 +158,7 @@ class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
 
   def mostRetweeted: Tweet = {
     val all = right union left
-    val morePopular = all.filter(p => p.retweets > elem.retweets)
+    val morePopular = all.filter(tweet => tweet.retweets > elem.retweets)
     if (morePopular.isEmpty) elem
     else morePopular.mostRetweeted
   }
