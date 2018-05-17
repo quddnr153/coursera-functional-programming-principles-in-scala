@@ -73,3 +73,6 @@ res59: List[Animal] = List(Animal@11f8d3a8, Bird@7e1ec70e, Bird@169ea8d2)
 List에는 ::(elem T) 연산자가 있다. 이 연산자는 elem이 앞에 붙은 새 List를 반환한다. 이 새 List는 원래의 리스트와 같은 타입이 된다.
 
 List에는 ::[B >: T](x: B)라는 연산자가 또한 있어서 List[B]를 반환한다. B >: T 관계를 보라. 이는 B가 T의 상위 클래스라는 의미이다. 이로 인해 Animal을 List[Bird]의 앞에 붙이는 경우도 제대로 처리할 수 있다.
+
+ref:
+- https://twitter.github.io/scala_school/ko/type-basics.html
