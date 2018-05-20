@@ -76,3 +76,42 @@ List에는 ::[B >: T](x: B)라는 연산자가 또한 있어서 List[B]를 반�
 
 ref:
 - https://twitter.github.io/scala_school/ko/type-basics.html
+
+---
+#### Case class
+---
+
+```scala
+trait Expr
+case class Var(name: String) extends Expr
+case class Number(num: Double) extends Expr
+case class UnOp(operator: String, arg: Expr) extends Expr
+case class BinOp(operator: String, left: Expr, right: Expr) extends Expr
+```
+
+Case class 는 스칼라 컴파일러에게 해당 클래스에 문법적으로 편리한 기능 몇 가지를 추가하려고 지시하는 것이다.
+
+1. 컴파일러는 클래스 이름과 같은 이름의 팩토리 메소드를 추가한다.
+
+```scala
+val v = Var("x")
+```
+
+2. 케이스 클래스의 파라미터 목록에 있는 모든 인자에 암시적으로 val 접두사를 붙인다.
+
+3. 컴파일러는 케이스 클래스에 toString, hashCode, equals 메소드의 일반적인 구현을 추가한다.
+
+```scala
+val op = BinOp("+", Number(1), v)
+println(op)
+op.right == Var("x")
+```
+
+4. 컴파일러는 어떤 케이스 클래스에서 일부를 변경한 복사복을 생성하는 copy 메소드를 추가한다.
+
+```scala
+op.copy(operator = "-")
+```
+
+위는 operator 만 바꾸고 나머지는 op 와 같은 연산을 어떻게 만드는지 보여준다.
+
