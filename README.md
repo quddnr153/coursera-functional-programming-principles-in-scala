@@ -115,3 +115,22 @@ op.copy(operator = "-")
 
 위는 operator 만 바꾸고 나머지는 op 와 같은 연산을 어떻게 만드는지 보여준다.
 
+---
+#### Pattern match
+---
+
+```selector match { alternatives }``` 와 같은 구조.
+
+- constant pattern 은 == 연산자를 사용
+- variable pattern 은 모든 값과 매치
+- wildcard pattern (_) 은 모든 값과 매치
+- constructor pattern 은 생성자와 매치
+
+---
+***switch 와 match 비교***
+
+1. match 는 ***표현식***, 따라서 결과 값을 가진다
+2. 스칼라의 대안 표현식은 다음 케이스로 빠지지 않는다.
+3. 매치에 성공하지 못하는 경우 MatchError 예외가 발생, 따라서 디폴트 케이스를 반드시 추가해야함
+
+
