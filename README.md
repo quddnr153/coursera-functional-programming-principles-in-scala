@@ -133,4 +133,19 @@ op.copy(operator = "-")
 2. 스칼라의 대안 표현식은 다음 케이스로 빠지지 않는다.
 3. 매치에 성공하지 못하는 경우 MatchError 예외가 발생, 따라서 디폴트 케이스를 반드시 추가해야함
 
+---
+### Week 5
+---
+
+---
+#### Lists
+---
+
+- Lists are immutable, and recursive (arrays are mutable, and flat)
+- Homogeneous: elements 가 같은 타입이여야 한다.
+- head, tail, isEmpty, 등등 여러 method 지원
+- merge sort ? -> scala List 의 sort 는 Java 의 Arrays.sort() 를 사용한다 (merge sort, stable)
+
+---
+scala.math.Ordering -> Java Comparator 구현
 
