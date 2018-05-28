@@ -149,3 +149,5 @@ op.copy(operator = "-")
 ---
 scala.math.Ordering -> Java Comparator 구현
 
+---
+상수 시간 복잡도인 ```head``` 및 ```tail``` 과 달리, ```init``` 과 ```last``` 는 결과를 계산하기 위해 전체 리스트를 순회해야 한다. 그러므로 이 둘은 리스트 길이만큼 시간이 걸린다.
